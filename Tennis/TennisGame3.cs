@@ -22,7 +22,7 @@ namespace Tennis
             {
                 string tennisTermPlayer1 = tennisTerms[_player1points];
                 string tennisTermPlayer2 = tennisTerms[_player2points];
-                return (_player1points == _player2points) ? tennisTermPlayer1 + "-All" : tennisTermPlayer1 + "-" + tennisTermPlayer2;
+                return (_player1points == _player2points) ? $"{tennisTermPlayer1}-All" : $"{tennisTermPlayer1}-{tennisTermPlayer2}";
             }
 
             if (_player1points == _player2points)
