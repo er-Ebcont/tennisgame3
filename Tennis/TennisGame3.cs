@@ -31,7 +31,7 @@ namespace Tennis
             }
                 
             string winningPlayerName = _player1points > _player2points ? _player1Name : _player2Name;
-            return (Math.Abs(_player1points-_player2points) == 1) ? "Advantage " + winningPlayerName : "Win for " + winningPlayerName;
+            return (Math.Abs(_player1points-_player2points) == 1) ? $"Advantage {winningPlayerName}" : $"Win for {winningPlayerName}";
         }
 
         public void WonPoint(string playerName)
