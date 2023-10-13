@@ -7,7 +7,6 @@ namespace Tennis
 
         private IPlayer _player1;
         private IPlayer _player2;
-        //private int _player2points;
         private string[] tennisTerms = { "Love", "Fifteen", "Thirty", "Forty" };
 
         public TennisGame3(string player1Name, string player2Name)
@@ -31,18 +30,18 @@ namespace Tennis
                 return "Deuce";
             }
                 
-            string winningPlayerName = this._player1.PlayerPoints > this._player2.PlayerPoints ? _player1.PlayerName : _player2.PlayerName;
+            string winningPlayerName = this._player1.PlayerPoints > this._player2.PlayerPoints ? _player1.Name : _player2.Name;
             return (Math.Abs(this._player1.PlayerPoints -this._player2.PlayerPoints) == 1) ? $"Advantage {winningPlayerName}" : $"Win for {winningPlayerName}";
         }
 
         public void WonPoint(string playerName)
         {
-            if (playerName == this._player1.PlayerName)
+            if (playerName == this._player1.Name)
             {
                 this._player1.PlayerPoints += 1;
             }
 
-            if (playerName == this._player2.PlayerName)
+            if (playerName == this._player2.Name)
             {
                 this._player2.PlayerPoints += 1;
             }

@@ -2,7 +2,7 @@
 {
     public interface IPlayer
     {
-        string PlayerName { get; set; }
+        string Name { get; set; }
         int PlayerPoints { get; set; }
     }
 }

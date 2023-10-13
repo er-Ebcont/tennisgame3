@@ -11,7 +11,7 @@
             _playerPoints = playerPoints;
         }
 
-        public string PlayerName { get => _playerName; set => _playerName = value; }
+        public string Name { get => _playerName; set => _playerName = value; }
         public int PlayerPoints { get => _playerPoints; set => _playerPoints = value; }
     }
 }
