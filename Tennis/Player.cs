@@ -4,6 +4,7 @@
     {
         private string _playerName;
         private int _playerPoints;
+        private string[] tennisTerms = { "Love", "Fifteen", "Thirty", "Forty" };
 
         public Player(string playerName)
         {
@@ -17,5 +18,7 @@
         {
             get => _playerPoints < 4;
         }
+
+        public string GetCurrentTennisTerm => throw new System.NotImplementedException();
     }
 }
