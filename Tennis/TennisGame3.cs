@@ -15,18 +15,17 @@ namespace Tennis
 
         public string GetScore()
         {
-            string s;
             if ((_player1points < 4 && _player2points < 4) && (_player1points + _player2points < 6))
             {
                 string[] p = { "Love", "Fifteen", "Thirty", "Forty" };
-                s = p[_player1points];
+                string s = p[_player1points];
                 return (_player1points == _player2points) ? s + "-All" : s + "-" + p[_player2points];
             }
             else
             {
                 if (_player1points == _player2points)
                     return "Deuce";
-                s = _player1points > _player2points ? _player1Name : _player2Name;
+                string s = _player1points > _player2points ? _player1Name : _player2Name;
                 return ((_player1points - _player2points) * (_player1points - _player2points) == 1) ? "Advantage " + s : "Win for " + s;
             }
         }
