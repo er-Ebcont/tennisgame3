@@ -8,7 +8,7 @@
         public Player(string playerName, int playerPoints)
         {
             _playerName = playerName;
-            _playerPoints = playerPoints;
+            _playerPoints = 0;
         }
 
         public string Name { get => _playerName; set => _playerName = value; }
