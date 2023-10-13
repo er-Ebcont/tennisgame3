@@ -17,9 +17,9 @@ namespace Tennis
         {
             if ((_player1points < 4 && _player2points < 4) && (_player1points + _player2points < 6))
             {
-                string[] p = { "Love", "Fifteen", "Thirty", "Forty" };
-                string s = p[_player1points];
-                return (_player1points == _player2points) ? s + "-All" : s + "-" + p[_player2points];
+                string[] tennisTerms = { "Love", "Fifteen", "Thirty", "Forty" };
+                string s = tennisTerms[_player1points];
+                return (_player1points == _player2points) ? s + "-All" : s + "-" + tennisTerms[_player2points];
             }
             else
             {
