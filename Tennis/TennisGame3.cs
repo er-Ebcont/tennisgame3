@@ -17,33 +17,33 @@ namespace Tennis
 
         public string GetScore()
         {
-            if ((this._player1.PlayerPoints < 4 && this._player2.PlayerPoints < 4) && (this._player1.PlayerPoints + this._player2.PlayerPoints < 6))
+            if ((this._player1.Points < 4 && this._player2.Points < 4) && (this._player1.Points + this._player2.Points < 6))
             {
-                string tennisTermPlayer1 = tennisTerms[this._player1.PlayerPoints];
-                string tennisTermPlayer2 = tennisTerms[this._player2.PlayerPoints];
-                return (this._player1.PlayerPoints == this._player2.PlayerPoints) ? $"{tennisTermPlayer1}-All" : $"{tennisTermPlayer1}-{tennisTermPlayer2}";
+                string tennisTermPlayer1 = tennisTerms[this._player1.Points];
+                string tennisTermPlayer2 = tennisTerms[this._player2.Points];
+                return (this._player1.Points == this._player2.Points) ? $"{tennisTermPlayer1}-All" : $"{tennisTermPlayer1}-{tennisTermPlayer2}";
             }
 
-            if (this._player1.PlayerPoints == this._player2.PlayerPoints)
+            if (this._player1.Points == this._player2.Points)
             {
                 // Unentschieden
                 return "Deuce";
             }
                 
-            string winningPlayerName = this._player1.PlayerPoints > this._player2.PlayerPoints ? _player1.Name : _player2.Name;
-            return (Math.Abs(this._player1.PlayerPoints -this._player2.PlayerPoints) == 1) ? $"Advantage {winningPlayerName}" : $"Win for {winningPlayerName}";
+            string winningPlayerName = this._player1.Points > this._player2.Points ? _player1.Name : _player2.Name;
+            return (Math.Abs(this._player1.Points -this._player2.Points) == 1) ? $"Advantage {winningPlayerName}" : $"Win for {winningPlayerName}";
         }
 
         public void WonPoint(string playerName)
         {
             if (playerName == this._player1.Name)
             {
-                this._player1.PlayerPoints += 1;
+                this._player1.Points += 1;
             }
 
             if (playerName == this._player2.Name)
             {
-                this._player2.PlayerPoints += 1;
+                this._player2.Points += 1;
             }
         }
 
