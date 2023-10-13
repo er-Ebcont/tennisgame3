@@ -7,13 +7,13 @@ namespace Tennis
         private int _player2points;
         private int _player1points;
         private IPlayer _player1;
-        private string _player2Name;
+        private IPlayer _player2Name;
         private string[] tennisTerms = { "Love", "Fifteen", "Thirty", "Forty" };
 
         public TennisGame3(string player1Name, string player2Name)
         {
             this._player1 = new Player(player1Name, 0);
-            this._player2Name = player2Name;
+            this._player2Name = new Player(player2Name, 0);
         }
 
         public string GetScore()
@@ -31,7 +31,7 @@ namespace Tennis
                 return "Deuce";
             }
                 
-            string winningPlayerName = _player1points > _player2points ? _player1.PlayerName : _player2Name;
+            string winningPlayerName = _player1points > _player2points ? _player1.PlayerName : _player2Name.PlayerName;
             return (Math.Abs(_player1points-_player2points) == 1) ? $"Advantage {winningPlayerName}" : $"Win for {winningPlayerName}";
         }
 
@@ -42,7 +42,7 @@ namespace Tennis
                 this._player1points += 1;
             }
 
-            if (playerName == this._player2Name)
+            if (playerName == this._player2Name.PlayerName)
             {
                 this._player2points += 1;
             }
