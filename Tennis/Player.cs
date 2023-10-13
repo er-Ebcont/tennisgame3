@@ -5,7 +5,7 @@
         private string _playerName;
         private int _playerPoints;
 
-        public Player(string playerName, int playerPoints)
+        public Player(string playerName)
         {
             _playerName = playerName;
             _playerPoints = 0;

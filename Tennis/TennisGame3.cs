@@ -11,8 +11,8 @@ namespace Tennis
 
         public TennisGame3(string player1Name, string player2Name)
         {
-            this._player1 = new Player(player1Name, 0);
-            this._player2 = new Player(player2Name, 0);
+            this._player1 = new Player(player1Name);
+            this._player2 = new Player(player2Name);
         }
 
         public string GetScore()
