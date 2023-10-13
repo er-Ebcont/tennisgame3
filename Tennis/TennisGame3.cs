@@ -6,13 +6,13 @@ namespace Tennis
     {
         private int _player2points;
         private int _player1points;
-        private string _player1Name;
+        private IPlayer _player1Name;
         private string _player2Name;
         private string[] tennisTerms = { "Love", "Fifteen", "Thirty", "Forty" };
 
         public TennisGame3(string player1Name, string player2Name)
         {
-            this._player1Name = player1Name;
+            this._player1Name = new Player(player1Name, 0);
             this._player2Name = player2Name;
         }
 
@@ -31,13 +31,13 @@ namespace Tennis
                 return "Deuce";
             }
                 
-            string winningPlayerName = _player1points > _player2points ? _player1Name : _player2Name;
+            string winningPlayerName = _player1points > _player2points ? _player1Name.PlayerName : _player2Name;
             return (Math.Abs(_player1points-_player2points) == 1) ? $"Advantage {winningPlayerName}" : $"Win for {winningPlayerName}";
         }
 
         public void WonPoint(string playerName)
         {
-            if (playerName == this._player1Name)
+            if (playerName == this._player1Name.PlayerName)
             {
                 this._player1points += 1;
             }
