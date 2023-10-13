@@ -13,5 +13,6 @@
 
         public string Name { get => _playerName; set => _playerName = value; }
         public int Points { get => _playerPoints; set => _playerPoints = value; }
+        public bool IsTennisTerm { get => throw new System.NotImplementedException(); set => throw new System.NotImplementedException(); }
     }
 }
