@@ -1,6 +1,6 @@
 ﻿namespace Tennis
 {
-    public class Player
+    public class Player : IPlayer
     {
         private string _playerName;
         private int _playerPoints;
