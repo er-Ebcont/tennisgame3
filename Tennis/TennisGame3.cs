@@ -4,7 +4,6 @@ namespace Tennis
 {
     public class TennisGame3 : ITennisGame
     {
-
         private IPlayer _player1;
         private IPlayer _player2;
 
