@@ -2,7 +2,7 @@ namespace Tennis
 {
     public class TennisGame3 : ITennisGame
     {
-        private int p2;
+        private int _player2points;
         private int _player1points;
         private string _player1Name;
         private string _player2Name;
@@ -16,18 +16,18 @@ namespace Tennis
         public string GetScore()
         {
             string s;
-            if ((_player1points < 4 && p2 < 4) && (_player1points + p2 < 6))
+            if ((_player1points < 4 && _player2points < 4) && (_player1points + _player2points < 6))
             {
                 string[] p = { "Love", "Fifteen", "Thirty", "Forty" };
                 s = p[_player1points];
-                return (_player1points == p2) ? s + "-All" : s + "-" + p[p2];
+                return (_player1points == _player2points) ? s + "-All" : s + "-" + p[_player2points];
             }
             else
             {
-                if (_player1points == p2)
+                if (_player1points == _player2points)
                     return "Deuce";
-                s = _player1points > p2 ? _player1Name : _player2Name;
-                return ((_player1points - p2) * (_player1points - p2) == 1) ? "Advantage " + s : "Win for " + s;
+                s = _player1points > _player2points ? _player1Name : _player2Name;
+                return ((_player1points - _player2points) * (_player1points - _player2points) == 1) ? "Advantage " + s : "Win for " + s;
             }
         }
 
@@ -36,7 +36,7 @@ namespace Tennis
             if (playerName == "player1")
                 this._player1points += 1;
             else
-                this.p2 += 1;
+                this._player2points += 1;
         }
 
     }
