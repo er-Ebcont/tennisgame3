@@ -7,7 +7,7 @@ namespace Tennis
 
         private IPlayer _player1;
         private IPlayer _player2;
-        private string[] tennisTerms = { "Love", "Fifteen", "Thirty", "Forty" };
+        //private string[] tennisTerms = { "Love", "Fifteen", "Thirty", "Forty" };
 
         public TennisGame3(string player1Name, string player2Name)
         {
@@ -19,8 +19,8 @@ namespace Tennis
         {
             if ((this._player1.IsTennisTerm && this._player2.IsTennisTerm) && (this._player1.Points + this._player2.Points < 6))
             {
-                string tennisTermPlayer1 = tennisTerms[this._player1.Points];
-                string tennisTermPlayer2 = tennisTerms[this._player2.Points];
+                string tennisTermPlayer1 = this._player1.GetCurrentTennisTerm;
+                string tennisTermPlayer2 = this._player2.GetCurrentTennisTerm;
                 return (this._player1.Points == this._player2.Points) ? $"{tennisTermPlayer1}-All" : $"{tennisTermPlayer1}-{tennisTermPlayer2}";
             }
 
