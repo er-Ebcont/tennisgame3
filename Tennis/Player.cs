@@ -19,6 +19,17 @@
             get => _playerPoints < 4;
         }
 
-        public string GetCurrentTennisTerm => throw new System.NotImplementedException();
+        public string GetCurrentTennisTerm
+        {
+            get
+            {
+                if (this.Points >= tennisTerms.Length)
+                {
+                    throw new System.Exception($"No Tennis Term found for player {this.Name} with points: {this.Points}.");
+                }
+
+                return this.tennisTerms[this.Points];
+            }
+        }
     }
 }
