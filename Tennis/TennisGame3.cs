@@ -8,6 +8,7 @@ namespace Tennis
         private int _player1points;
         private string _player1Name;
         private string _player2Name;
+        private string[] tennisTerms = { "Love", "Fifteen", "Thirty", "Forty" };
 
         public TennisGame3(string player1Name, string player2Name)
         {
@@ -19,7 +20,6 @@ namespace Tennis
         {
             if ((_player1points < 4 && _player2points < 4) && (_player1points + _player2points < 6))
             {
-                string[] tennisTerms = { "Love", "Fifteen", "Thirty", "Forty" };
                 string tennisTermPlayer1 = tennisTerms[_player1points];
                 string tennisTermPlayer2 = tennisTerms[_player2points];
                 return (_player1points == _player2points) ? tennisTermPlayer1 + "-All" : tennisTermPlayer1 + "-" + tennisTermPlayer2;
