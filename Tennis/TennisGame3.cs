@@ -17,7 +17,7 @@ namespace Tennis
 
         public string GetScore()
         {
-            if ((this._player1.Points < 4 && this._player2.Points < 4) && (this._player1.Points + this._player2.Points < 6))
+            if ((this._player1.IsTennisTerm && this._player2.IsTennisTerm) && (this._player1.Points + this._player2.Points < 6))
             {
                 string tennisTermPlayer1 = tennisTerms[this._player1.Points];
                 string tennisTermPlayer2 = tennisTerms[this._player2.Points];
