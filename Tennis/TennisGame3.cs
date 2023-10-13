@@ -27,6 +27,7 @@ namespace Tennis
 
             if (_player1points == _player2points)
             {
+                // Unentschieden
                 return "Deuce";
             }
                 
@@ -39,10 +40,12 @@ namespace Tennis
             if (playerName == this._player1Name)
             {
                 this._player1points += 1;
-                return;
             }
 
-            this._player2points += 1;
+            if (playerName == this._player2Name)
+            {
+                this._player2points += 1;
+            }
         }
 
     }
