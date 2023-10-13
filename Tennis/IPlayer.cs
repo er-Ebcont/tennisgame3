@@ -4,7 +4,7 @@
     {
         string Name { get; set; }
         int Points { get; set; }
-        bool IsTennisTerm { get;}
+        bool HasTennisTerm { get;}
         string GetCurrentTennisTerm { get;}
     }
 }

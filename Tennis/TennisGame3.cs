@@ -15,7 +15,7 @@ namespace Tennis
 
         public string GetScore()
         {
-            if ((this._player1.IsTennisTerm && this._player2.IsTennisTerm) && (this._player1.Points + this._player2.Points < 6))
+            if ((this._player1.HasTennisTerm && this._player2.HasTennisTerm) && (this._player1.Points + this._player2.Points < 6))
             {
                 return (this._player1.Points == this._player2.Points) ? 
                     $"{this._player1.GetCurrentTennisTerm}-All" : 
