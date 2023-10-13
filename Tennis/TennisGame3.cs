@@ -22,13 +22,11 @@ namespace Tennis
                 string tennisTermPlayer2 = tennisTerms[_player2points];
                 return (_player1points == _player2points) ? tennisTermPlayer1 + "-All" : tennisTermPlayer1 + "-" + tennisTermPlayer2;
             }
-            else
-            {
-                if (_player1points == _player2points)
-                    return "Deuce";
-                string s = _player1points > _player2points ? _player1Name : _player2Name;
-                return ((_player1points - _player2points) * (_player1points - _player2points) == 1) ? "Advantage " + s : "Win for " + s;
-            }
+
+            if (_player1points == _player2points)
+                return "Deuce";
+            string s = _player1points > _player2points ? _player1Name : _player2Name;
+            return ((_player1points - _player2points) * (_player1points - _player2points) == 1) ? "Advantage " + s : "Win for " + s;
         }
 
         public void WonPoint(string playerName)
