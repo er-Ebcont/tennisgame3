@@ -18,8 +18,6 @@ namespace Tennis
         {
             if ((this._player1.IsTennisTerm && this._player2.IsTennisTerm) && (this._player1.Points + this._player2.Points < 6))
             {
-                //string tennisTermPlayer1 = this._player1.GetCurrentTennisTerm;
-                //string tennisTermPlayer2 = this._player2.GetCurrentTennisTerm;
                 return (this._player1.Points == this._player2.Points) ? $"{this._player1.GetCurrentTennisTerm}-All" : $"{this._player1.GetCurrentTennisTerm}-{this._player2.GetCurrentTennisTerm}";
             }
 
