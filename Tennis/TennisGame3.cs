@@ -1,3 +1,5 @@
+using System;
+
 namespace Tennis
 {
     public class TennisGame3 : ITennisGame
@@ -26,7 +28,7 @@ namespace Tennis
             if (_player1points == _player2points)
                 return "Deuce";
             string winningPlayerName = _player1points > _player2points ? _player1Name : _player2Name;
-            return ((_player1points - _player2points) * (_player1points - _player2points) == 1) ? "Advantage " + winningPlayerName : "Win for " + winningPlayerName;
+            return (Math.Abs(_player1points-_player2points) == 1) ? "Advantage " + winningPlayerName : "Win for " + winningPlayerName;
         }
 
         public void WonPoint(string playerName)
